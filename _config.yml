@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Base Template
+title: Renacer Yoga
 
 email: jav.brustolon@gmail.com
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Base theme template, to start my works
+  Bienvenido a renacer yoga. Somos un centro dedicado al estudio del yoga y de la medicina ayurveda
 
-jumbotron-description: An example of how could be your website
+jumbotron-description: Bienvenido a renacer yoga. Somos un centro dedicado al estudio del yoga y de la medicina ayurveda
 
 baseurl: "/base-template" # the subpath of your site, e.g. /blog
 
