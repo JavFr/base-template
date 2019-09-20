@@ -1,0 +1,162 @@
+---
+layout: default
+---
+
+<section id="lessons" class="container">
+    <h2 class="text-center m-5">¡Clases, cursos y talleres todo el año!</h2>
+    <div class="row">
+        {% for lesson in site.lessons %}
+            <div class="col-md-6 col-lg-4 mb-5">
+                <!-- Card -->
+                <div class="card card-image cover" style="background-image: url({{ site.baseurl }}{{lesson.back-image}});  background-repeat: no-repeat; background-size: cover;">
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                        <div>
+                            <h5 class="pink-text"><i class="fas fa-chart-pie"></i> {{ lesson.category }}</h5>
+                            <h3 class="card-title pt-2"><strong>{{ lesson.title }}</strong></h3>
+                            <!--<p>{{ lesson.excerpt }}</p>-->
+                            <a href="{{ site.baseurl }}{{ lesson.url }}" class="btn btn-pink"><i class="fas fa-clone left"></i>Información</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+        {% endfor %}
+    </div>
+</section>
+<section id="schedule" class="container">
+
+    <!-- Heading -->
+    <h2 class="mb-5 font-weight-bold text-center">Horarios Clases Grupales</h2>
+
+    <div class="table-responsive">
+        <table id="tablePreview" class="table table-striped table-hover table-bordered text-center">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miercoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sabado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">08:00  09:30</th>
+                    <td class="bg-primary">Hatha Yoga Inicial</td>
+                    <td class="bg-secondary">Hatha Yoga Intermedio</td>
+                    <td class="bg-primary">Hatha Yoga Inicial</td>
+                    <td class="bg-secondary">Hatha Yoga Intermedio</td>
+                    <td class="bg-primary">Hatha Yoga Inicial</td>
+                    <td class="bg-secondary">Hatha Yoga Intermedio</td>
+                </tr>
+                <tr>
+                    <th scope="row">10:00  11:30</th>
+                    <td class="bg-success">Ashtanga Yoga Inicial</td>
+                    <td class="bg-warning">Ashtanga Yoga Intermedio</td>
+                    <td class="bg-success">Ashtanga Yoga Inicial</td>
+                    <td class="bg-warning">Ashtanga Yoga Intermedio</td>
+                    <td class="bg-success">Ashtanga Yoga Inicial</td>
+                    <td class="bg-warning">Ashtanga Yoga Intermedio</td>
+                </tr>
+                <tr>
+                    <th scope="row">17:00  18:30</th>
+                    <td class="bg-primary">Hatha Yoga Inicial</td>
+                    <td class="bg-secondary">Hatha Yoga Intermedio</td>
+                    <td class="bg-primary">Hatha Yoga Inicial</td>
+                    <td class="bg-secondary">Hatha Yoga Intermedio</td>
+                    <td class="bg-primary">Hatha Yoga Inicial</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">19:00  20:30</th>
+                    <td class="bg-success">Ashtanga Yoga Inicial</td>
+                    <td class="bg-warning">Ashtanga Yoga Intermedio</td>
+                    <td class="bg-success">Ashtanga Yoga Inicial</td>
+                    <td class="bg-warning">Ashtanga Yoga Intermedio</td>
+                    <td class="bg-success">Ashtanga Yoga Inicial</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<div class="container">
+    <div class="row my-5">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+</div>
+
+<section id="events" class="container">
+   <h2 class="text-center mb-5">Próximos Eventos</h2>
+   <div class="row">
+        {% capture now %}{{'now' | date: '%s' | plus: 0 }}{% endcapture %}
+        {% for event in site.events limit:3 %}
+            {% capture date %}{{event.date | date: '%s' | plus: 0 }}{% endcapture %}
+            {% if date > now %}
+        <div class="col-sm-6 col-lg-4 mb-5">
+            <!-- Card -->
+            <div class="card">
+                 <!-- Card content -->
+                <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title">{{ event.title }}</h4>
+                        <!-- Date -->
+                        <p class="card-text">{{ event.date | date: "%m/%d/%Y - %R" }}</p>
+                        <!-- Teacher -->
+                        <p class="card-text">Profesor: {{ event.teacher }}</p>
+                        <!-- Text -->
+                        <p class="card-text">{{ event.excerpt }}</p>
+                        <!-- Button -->
+                        <a href="{{ event.url }}" class="btn btn-primary">Info</a>
+                    
+                </div>
+            </div>
+            <!-- Card -->
+        </div>
+        {% endif %}
+    {% endfor %}
+   </div>
+</section>
+
+<div class="container">
+        <div class="row my-5">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+    </div>
+<section id="contact" class="container">
+
+    <div class="row">
+        <div class="col col-md-6">
+            <h2>Contactanos</h2>
+            <p>Podés comunicarte con nostros a través de los siguientes medios:</p>
+            <div class="list-group-flush">
+                    <div class="list-group-item">
+                      <a class="mb-0"><i class="fab fa-instagram fa-2x mr-4 blue p-3 white-text rounded " aria-hidden="true"></i>@ejemploYoga</a>
+                    </div>
+                    <div class="list-group-item">
+                      <a class="mb-0"> <i class="fab fa-facebook fa-2x mr-4 blue mr-4 p-3 white-text rounded" aria-hidden="true"></i>@ejemploYoga</a>
+                    </div>
+                    <div class="list-group-item">
+                      <a href="mailto:ejemployoga@gmail.com" class="mb-0"><i class="fa fa-envelope fa-2x mr-4 mr-4 purple p-3 white-text rounded" aria-hidden="true"></i>ejemployoga@gmail.com</a>
+                    </div>
+                    <div class="list-group-item">
+                        <p class="mb-0"><i class="fa fa-phone fa-2x mr-4 mr-4 purple p-3 white-text rounded" aria-hidden="true"></i>+54 11 123456789</p>
+                    </div>
+            </div>
+        </div>
+        <div class="col col-md-6">
+            <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0653459504547!2d-58.36904348477034!3d-34.60250908045984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335320d9ea4c5%3A0x2cb41df4e2abe065!2sGoogle%20Argentina!5e0!3m2!1ses-419!2sar!4v1568132578760!5m2!1ses-419!2sar" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <p class="text-center"><i class="fa fa-map fa-1x mr-2 grey-text"></i>Calle 124, Buenos Aires, Argentina</p>
+        </div>
+    </div>
+</section>

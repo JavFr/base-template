@@ -1,0 +1,6 @@
+---
+back-image: '/assets/images/lessons-groupal.jpg'
+title: Yoga Grupal
+category: Clases
+---
+Clases de Yoga grupales para todos los niveles. Hatha y Ashtanga. Se puede comenzar en cualquier momento del año.

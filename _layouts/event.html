@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<main class="container" style="margin-top: 10%; min-height: 80vh;">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center">
+
+        <!-- Title -->
+        <h1 class="card-title h4 pb-2"><strong>{{ page.title }}</strong></h4>
+        
+        <div class="row">
+        <!-- Card image -->
+        <div class="col-lg-6 align-self-center">
+          <img src="{{page.back-image}}" class="img-fluid" alt="">
+          <a href="#">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        
+        <div class="col-lg-6 align-self-start">
+        <h5 class="indigo-text h5 mb-4">{{ page.date | date: "%m/%d/%Y - %R" }} - {{page.teacher}}</h5>
+      
+        <p class="card-text">{{content}}</p>
+      
+        <!-- Linkedin -->
+        <a class="fa-lg p-2 m-2 li-ic"><i class="fab fa-linkedin-in grey-text"></i></a>
+        <!-- Twitter -->
+        <a class="fa-lg p-2 m-2 tw-ic"><i class="fab fa-twitter grey-text"></i></a>
+        <!-- Dribbble -->
+        <a class="fa-lg p-2 m-2 fb-ic"><i class="fab fa-facebook-f grey-text"></i></a>
+        </div>
+        </div>
+      
+      </div>
+      <!-- Jumbotron -->
+</main>

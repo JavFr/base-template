@@ -1,0 +1,41 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'es-AR' }}">
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    <!--Meta Tags-->
+    {% include meta.html %}
+
+    <!--Material Bootstrap-->
+    {% include mdb.html %}
+
+    <!--Inline CSS-->
+    <style type="text/css">
+      {% capture include_to_scssify %}
+        {% include inline.scss %}
+      {% endcapture %}
+      {{ include_to_scssify | scssify }}
+    </style>
+
+    <!--RSS FEED-->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
+  </head>
+
+  <body>
+    <header>
+      {% include navbar.html %}
+      {% if page.title == 'home' %}
+        {% include jumbotron.html %}
+      {% endif %}
+    </header>
+    {{ content }}
+    {% include footer.html %}
+    {% include footerScripts.html %}
+    {% include analytics.html %}
+  </body>
+</html>

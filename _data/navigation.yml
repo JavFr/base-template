@@ -1,0 +1,8 @@
+- name: Inicio
+  link: /#home
+- name: Clases
+  link: /#lessons
+- name: Eventos
+  link: /#events
+- name: Contacto
+  link: /#contact
