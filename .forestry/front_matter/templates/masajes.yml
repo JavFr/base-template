@@ -1,0 +1,13 @@
+---
+label: Masajes
+hide_body: true
+fields:
+- type: file
+  name: back-image
+  label: back-image
+- type: text
+  name: title
+  label: title
+- type: text
+  name: category
+  label: category
