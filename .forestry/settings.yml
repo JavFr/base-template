@@ -23,8 +23,8 @@ sections:
   label: Events
   create: all
   match: "**/*"
-upload_dir: https://api.cloudinary.com/v1_1/javfrcloud
-public_path: https://api.cloudinary.com/v1_1/javfrcloud
+upload_dir: ''
+public_path: ''
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
